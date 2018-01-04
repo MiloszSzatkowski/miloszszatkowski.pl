@@ -1,0 +1,89 @@
+@mixin gradient($g1,$g2) {
+  background: $g1; /* Show a solid color for older browsers */
+  background: -moz-linear-gradient($g1, $g1, $g2);
+  background: -o-linear-gradient($g1, $g1, $g2);
+  background: -webkit-linear-gradient($g1, $g1, $g2);
+}
+
+@mixin gradientCenter($g11,$g22) {
+  background: $g11; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, $g11 , $g22, $g11); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, $g11, $g22, $g11); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, $g11, $g22, $g11); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, $g11 , $g22, $g11); /* Standard syntax */
+}
+
+@mixin angle($pseudo, $flip: false, $angle: 0.7deg) {
+  // Possible values for $pseudo are: before, after, both
+  @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
+    position: relative;
+    z-index: 1;
+    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+
+    #{$selector} {
+      background: inherit;
+      content: '';
+      display: block;
+      height: 30%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    @if $pseudo == 'before' {
+      #{$selector} {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+    }
+
+    @if $pseudo == 'after' {
+      #{$selector} {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 100%;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+
+    @if $pseudo == 'both' {
+      &:before {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+
+      &:after {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+  }
+}

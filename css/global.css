@@ -1,0 +1,495 @@
+/*
+ @include center(both); na przykład
+ */
+body {
+  background-color: #f0f0f0;
+  background-image: radial-gradient(circle at 100% 150%, #f0f0f0 24%, white 25%, white 28%, #f0f0f0 29%, #f0f0f0 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 0 150%, #f0f0f0 24%, white 25%, white 28%, #f0f0f0 29%, #f0f0f0 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 50% 100%, white 10%, #f0f0f0 11%, #f0f0f0 23%, white 24%, white 30%, #f0f0f0 31%, #f0f0f0 43%, white 44%, white 50%, #f0f0f0 51%, #f0f0f0 63%, white 64%, white 71%, transparent 71%, transparent), radial-gradient(circle at 100% 50%, white 5%, #f0f0f0 6%, #f0f0f0 15%, white 16%, white 20%, #f0f0f0 21%, #f0f0f0 30%, white 31%, white 35%, #f0f0f0 36%, #f0f0f0 45%, white 46%, white 49%, transparent 50%, transparent), radial-gradient(circle at 0 50%, white 5%, #f0f0f0 6%, #f0f0f0 15%, white 16%, white 20%, #f0f0f0 21%, #f0f0f0 30%, white 31%, white 35%, #f0f0f0 36%, #f0f0f0 45%, white 46%, white 49%, transparent 50%, transparent);
+  background-size: 100px 50px;
+  position: relative;
+  z-index: 1;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: -1;
+  background: white;
+}
+body, div, p, span, section, header, article {
+  color: #666;
+  letter-spacing: 0.02em;
+  font-family: 'Roboto', sans-serif;
+}
+hr {
+  height: 1px;
+  background: #fff;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #fff, #a79a9a, #fff);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #fff, #a79a9a, #fff);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #fff, #a79a9a, #fff);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #fff, #a79a9a, #fff);
+  /* Standard syntax */
+}
+a {
+  font-family: 'Pridi', serif;
+  letter-spacing: 0.1em;
+  color: #274477;
+  text-decoration: none;
+}
+a :hover {
+  color: #274477;
+  text-decoration: underline;
+}
+.padSize {
+  padding: 0.3em;
+  display: flex;
+}
+.ngg-gallery-thumbnail {
+  transition: all 0.5s linear;
+  background-color: #fffdfe !important;
+  border: 2px solid rgba(0, 0, 0, 0) !important;
+}
+.ngg-gallery-thumbnail:hover {
+  box-shadow: 0 0 1em #666;
+  background-color: #274477;
+}
+@media (max-width: 1000px) {
+  .ngg-gallery-thumbnail {
+    width: 100px;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #274477;
+  letter-spacing: 0.1em;
+  font-family: 'Pridi', serif;
+}
+h1 :first-letter, h2 :first-letter, h3 :first-letter, h4 :first-letter, h5 :first-letter, h6 :first-letter, h1 a:first-letter, h2 a:first-letter, h3 a:first-letter, h4 a:first-letter, h5 a:first-letter, h6 a:first-letter {
+  font-size: 110%;
+  text-decoration: underline !important;
+  text-transform: capitalize;
+  color: #274477 !important;
+}
+h1, h2, h3 {
+  color: #274477 !important;
+}
+input, textarea {
+  background-color: #fffdfe;
+  border: 0;
+  box-shadow: 0 0 1em #666;
+  color: #666;
+  padding: 0.1em;
+  font-size: 0.8em;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+textarea {
+  padding: 1em;
+}
+button:hover {
+  background-color: #666;
+}
+input:hover {
+  border: 0.1em solid #274477;
+}
+input:active {
+  border: 0.1em solid #274477;
+}
+.carousel-indicators {
+  display: flex;
+  flex-wrap: wrap;
+}
+.carousel-indicators .active {
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+.carousel-indicators img {
+  opacity: 0.6;
+}
+.carousel-indicators img:hover {
+  opacity: 1;
+}
+.galeria_zdj {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+.wpcf7-form {
+  text-align: center;
+}
+.wpcf7-submit {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1em;
+  padding: 0.1em;
+}
+.entry-title {
+  display: none;
+}
+#nav-menu {
+  z-index: 100;
+  box-sizing: border-box;
+  width: 100vw;
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0 2px 2px #a79a9a;
+  padding: 0.3em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+#nav-menu .menu-menu-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+#nav-menu ul li {
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  padding-bottom: 0.3em;
+}
+#nav-menu ul li a {
+  color: #274477;
+  text-decoration: none;
+  padding: 0.5em;
+}
+#nav-menu ul li a:hover {
+  text-decoration: underline;
+  color: #274477;
+}
+#nav-menu ul, #nav-menu ul li {
+  display: inline-block;
+}
+#nav-menu .current-menu-item a {
+  color: #274477;
+}
+#nav-menu ul::after {
+  display: block;
+  content: "";
+  font-size: 0.7em;
+  letter-spacing: 0.3em;
+  color: #a79a9a;
+  height: 0.2em;
+  background: #fff;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #fff, #a79a9a, #fff);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #fff, #a79a9a, #fff);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #fff, #a79a9a, #fff);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #fff, #a79a9a, #fff);
+  /* Standard syntax */
+}
+.mar {
+  margin: 1em;
+}
+.cont1 {
+  background-color: #fff;
+  margin-top: 1em;
+  box-shadow: 0 0 8px #a79a9a;
+}
+.cont2 {
+  background-color: #fffdfe;
+  margin-top: 1em;
+  box-shadow: 0 0 8px #a79a9a;
+}
+@media (max-width: 550px) {
+  #nav-menu a {
+    font-size: 1em;
+  }
+  #nav-menu ul, #nav-menu li, #nav-menu a, #nav-menu ul li {
+    padding: 0;
+  }
+  p, li {
+    font-size: 0.8em;
+  }
+  h6 {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 700px) {
+  #me-tekst {
+    display: none !important;
+  }
+}
+@media (max-width: 630px) {
+  .row {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .container {
+    padding-left: 0;
+    margin-right: 0;
+  }
+  .h-icons {
+    float: none !important;
+  }
+}
+@media (max-width: 350px) {
+  #zaslona {
+    height: 6.2em !important;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.baner {
+  height: 10em;
+  background-attachment: fixed;
+  width: 100%;
+}
+.circle {
+  border-radius: 50%/50%;
+}
+.sepia {
+  filter: sepia(0.5);
+}
+.initial {
+  margin-top: 2em;
+  padding: 1em;
+}
+.tfb {
+  background-color: #666;
+}
+.tfbl {
+  background-color: #666;
+}
+.bor-left {
+  border-left: 5px solid #666;
+}
+.mar-top {
+  margin-top: 1em;
+}
+.h1 {
+  height: 1em;
+}
+.h2 {
+  height: 2em;
+}
+.h3 {
+  height: 3em;
+}
+.h4 {
+  height: 4em;
+}
+.h5 {
+  height: 5em;
+}
+.h6 {
+  height: 6em;
+}
+.h7 {
+  height: 7em;
+}
+.h8 {
+  height: 8em;
+}
+.h9 {
+  height: 9em;
+}
+.h10 {
+  height: 10em;
+}
+.w1 {
+  width: 1em;
+}
+.w2 {
+  width: 2em;
+}
+.w3 {
+  width: 3em;
+}
+.w4 {
+  width: 4em;
+}
+.w5 {
+  width: 5em;
+}
+.w6 {
+  width: 6em;
+}
+.w7 {
+  width: 7em;
+}
+.w8 {
+  width: 8em;
+}
+.w9 {
+  width: 9em;
+}
+.w10 {
+  width: 10em;
+}
+.pad1em {
+  padding: 1em;
+}
+.stretch {
+  align-items: stretch;
+}
+.thumb img {
+  transition: all 1s;
+  filter: sepia(0.3);
+  opacity: 0.9;
+}
+.thumb img:hover {
+  border-radius: 10% !important;
+  filter: sepia(0);
+  opacity: 1;
+}
+.thumb-cont {
+  display: block;
+  margin-top: 2em;
+}
+.thumb-wrap {
+  transition: all 0.3s linear;
+  box-shadow: 0 0 6px #a79a9a;
+  overflow: hidden;
+}
+.thumb-wrap:hover {
+  box-shadow: 0px 0px 10px #274477;
+}
+.border-kont-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #666;
+}
+.comment {
+  padding: 1em;
+  margin: 1em;
+}
+.comment .even {
+  border-left: 2px solid #f4c700;
+}
+.comment .odd {
+  border-left: 2px solid #666;
+  background-color: #666;
+}
+.comments {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #666;
+}
+.comments .reply {
+  padding-left: 1em;
+}
+.comments .vcard img.photo {
+  border: 3px solid #666;
+}
+#galeria {
+  /* The Modal (background) */
+  /* Modal Content */
+  /* The Close Button */
+  /* Next & previous buttons */
+  /* Position the "next button" to the right */
+  /* Number text (1/3 etc) */
+}
+#galeria .slide {
+  cursor: pointer;
+  width: 100%;
+  background-color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 77vh;
+}
+#galeria .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#galeria .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 3em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #a79a9a;
+}
+#galeria .modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  background-color: #a79a9a;
+}
+#galeria .close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+#galeria .mySlides {
+  display: none;
+}
+#galeria .prev, #galeria .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+#galeria .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+#galeria .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+#galeria .caption-container {
+  text-align: center;
+  background-color: #a79a9a;
+  padding: 2px 16px;
+  color: white;
+}
+.thumb-g {
+  cursor: pointer;
+}
+.thumb-g img {
+  transition: all 0.3s linear;
+}
+.thumb-g img:hover {
+  box-shadow: 0 0 5px #a79a9a;
+  border: 3px solid #666;
+  border-radius: 50%/50%;
+}
+.demo {
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.demo:hover {
+  box-shadow: 0 0 5px white;
+  border: 3px solid #a79a9a;
+  border-radius: 50%/50%;
+}
+.zamknij:hover {
+  color: white !important;
+}
